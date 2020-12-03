@@ -4,7 +4,7 @@ import airport from "./Images/airport.svg";
 function Description(){
     return(
 
-    <div style={{width: "699px", backgroundColor:"#00BCD4", color:"white", border:"0.5px solid #00BCD4"}}>
+    <div style={{maxWidth: "699px", width:"100vw", backgroundColor:"#00BCD4", color:"white", border:"0.5px solid #00BCD4"}}>
   <p style={{padding:"5%", fontSize:"1.2em"}}>
   Hello visitors,
   <br></br><br></br>

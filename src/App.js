@@ -1,31 +1,22 @@
 import './App.css';
-import Navigation from "./Components/Navigation";
-import Map from "./Components//Maps";
-import Description from "./Components/Description";
-import Blogentries from "./Components/Blogentries";
-import Contactpage from "./Components/contact";
+import Contactpage from "./Components/Contact";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Dashboard from "./Components/Dashboard";
+
 
 
 
 function App() {
   return (
     <div className="App">
-    
-      <Navigation />
-      <br></br>
-      <br></br>
-      <div style={{display: "flex", flexDirection: "row", flexWrap:"wrap", justifyContent:"center"}}>
-      <div style={{display: "flex", flexDirection: "row", flexWrap:"wrap", width:"700px", justifyContent: "center"}}>
-      <Blogentries />
-      </div>
+      <Switch>
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/Contact" component={Contactpage} />
 
-      <div style={{width: "700px", height: "600px", justifyContent:"center", marginTop: "14px"}}> 
-      <Description />
-      <Map />
-      </div>
+      </Switch>
+    
       
-      </div>
-      <Contactpage />
+      
       
       
     </div>

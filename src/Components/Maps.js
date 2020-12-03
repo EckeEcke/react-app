@@ -33,10 +33,10 @@ export class MapContainer extends Component {
         <Map google={this.props.google}
             onClick={this.onMapClicked}
             mapId={"4996d6ed2b7c73a6"}
-            style={{width: "700px", height: "380px"}}
+            style={{maxWidth: "700px", width:"100vw", height: "380px"}}
             zoom={1.2}
             initialCenter={{ lat: 53.551085, lng: 9.993682 }}
-            containerStyle={{ width: '700px', height: '380px' }}>
+            containerStyle={{width: "100vw", maxWidth: '500px', maxHeight: '380px' }}>
           
           <Marker onClick={this.onMarkerClick}
                   name={'Current location'} />
