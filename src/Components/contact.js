@@ -22,7 +22,7 @@ export class Contactpage extends Component {
                     Phone: 0178 5325488
                     
                 </p>
-                <img style={{width: "90vw", maxWidth: "700px"}} src={illustration}></img>
+                <img style={{width: "90vw", maxWidth: "700px"}} src={illustration} alt="contact information"></img>
             </div>
             </>
         )
