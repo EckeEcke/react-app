@@ -32,6 +32,7 @@ export class MapContainer extends Component {
       return (
         <Map google={this.props.google}
             onClick={this.onMapClicked}
+            mapId={"4996d6ed2b7c73a6"}
             style={{width: "700px", height: "380px"}}
             zoom={1.2}
             initialCenter={{ lat: 53.551085, lng: 9.993682 }}
