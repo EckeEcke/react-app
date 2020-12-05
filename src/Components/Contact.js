@@ -33,14 +33,15 @@ export class Contactpage extends Component {
                     </div>
                     <div style={{padding:"20px", marginTop:"10px"}}>
                         <h3>Send me a message:</h3>
-                        <form name="contact" method="post" data-netlify="true">
+                        <form name="contact" action="/Contact" method="post">
+                            <input type="hidden" name="form-name" value="contact" />
                             <label>Your Name: </label>
                             <br></br>
-                            <input type="text" name="name" placeholder="Enter your name" style={{width:"300px", padding:"10px", borderStyle:"none"}}/>   
+                            <input required type="text" name="name" placeholder="Enter your name" style={{width:"300px", padding:"10px", borderStyle:"none"}}/>   
                             <br></br><br></br>
                             <label>Message: </label>
                             <br></br>
-                            <textarea name="message" placeholder="Enter your message" rows="8" style={{width:"300px", padding:"10px", borderStyle:"none"}}></textarea>
+                            <textarea required name="message" placeholder="Enter your message" rows="8" style={{width:"300px", padding:"10px", borderStyle:"none"}}></textarea>
                             <br></br>
                             <center><button type="submit" style={{margin:"10px 20px 10px 10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}>Send</button></center>
                             
