@@ -3,6 +3,7 @@ import Contactpage from "./Components/Contact";
 import { Route, Switch } from 'react-router-dom';
 import Dashboard from "./Components/Dashboard";
 import NewPost from "./Components/NewPost"
+import Detailpage from "./Components/Detailpage";
 
 
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" exact component={Dashboard} />
         <Route path="/Contact" component={Contactpage} />
         <Route path="/New" component={NewPost} />
+        <Route path="/Details/:id" component={Detailpage} />
 
       </Switch>
     

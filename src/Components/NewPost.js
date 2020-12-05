@@ -16,7 +16,7 @@ export class NewPost extends Component {
 
             
 
-            <form style={{backgroundColor:"#00BCD4", padding:"20px", width:"100%", maxWidth: "500px", textAlign:"center", marginBottom:"20px", color:"white"}}>
+            <form style={{backgroundColor:"#00BCD4", padding:"20px", width:"100%", maxWidth: "500px", textAlign:"center", marginBottom:"60px", color:"white"}}>
             
             <h2>Create new blog entry</h2>
                 <label>Title</label>

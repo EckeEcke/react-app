@@ -9,9 +9,9 @@ const Blogentries = () => {
     return(
         <>
             {Entries &&
-                Entries.map((entry) => {
+                Entries.map((entry, index) => {
                 return(
-                    <Blogentry blog={entry} />
+                    <Blogentry blog={entry} id={index+1} />
                 
                 )}
             

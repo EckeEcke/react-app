@@ -20,9 +20,9 @@ export class Dashboard extends Component {
                   <Blogentries />
                   </div>
             
-                  <div style={{width: "700px", height: "600px", justifyContent:"center", marginTop: "14px"}}> 
+                  <div style={{width: "800px", height: "600px", justifyContent:"center", marginTop: "14px"}}> 
                   <Description />
-                  <Map />
+                  <Map  />
                   </div>
                   
                   </div>
