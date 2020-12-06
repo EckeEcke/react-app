@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import airport from "./Images/airport.svg";
+import airport from "./Images/airport2.svg";
 
 function Description(){
     return(

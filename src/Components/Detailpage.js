@@ -20,12 +20,17 @@ function Detailpage() {
         return(
             <>
             <Navigation />
-            <br></br>
-            <Link to="/"><button style={{margin:"10px", padding: "8px", backgroundColor: "#FF8C00", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faArrowLeft} /> Back</button></Link>
+    
+            
            
-            <div style={{display: "flex", flexDirection: "row", flexWrap:"wrap", justifyContent:"center"}}>
-            <div style={{width:"700px", maxWidth: "100vw", backgroundColor:"white", position: "relative", margin: "14px auto", border:"1px solid rgb(211,211,211,0.8)"}}>
-            <div style={{padding:"0 10px", width:"100%", maxWidth:"600px", margin:"0 auto"}}>
+            <div style={{display: "flex", flexDirection: "row", flexWrap:"wrap", justifyContent:"center", backgroundColor:"white", minHeight:"100vh"}}>
+            
+            <div style={{width:"700px", maxWidth: "100vw", backgroundColor:"white", position: "relative", margin: "0px auto"}}>
+            
+            <div style={{padding:"0 10px", maxWidth:"500px", margin:"0 auto"}}>
+            <br></br><br></br>
+            <Link to="/"><button style={{padding: "8px", backgroundColor: "#FF8C00", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faArrowLeft} /> Back</button></Link>
+            <br></br><br></br>
             <h2>{entry.title}</h2>
             <h5>
             <img style={{float:"left", height: "40px", width:"40px", objectFit:"cover", borderRadius: "50%", verticalAlign:"middle"}} src={entry.portrait}></img>
@@ -37,14 +42,14 @@ function Detailpage() {
             </div>
             
             
-            <img style={{width:"100%", maxWidth:"600px", display:"block", margin:"0 auto"}} src={entry.image}></img>
+            <img style={{width:"100%", maxWidth:"500px", display:"block", margin:"0 auto"}} src={entry.image}></img>
             <div style={{padding:"10px"}}>
-            <p style={{width:"100%", maxWidth:"600px", margin:"0 auto", paddingBottom:"30px"}}>{entry.description}</p>
+            <p style={{width:"100%", maxWidth:"500px", margin:"0 auto", paddingBottom:"30px"}}>{entry.description}</p>
             </div>
             
             </div>
     
-            <div style={{width: "700px", maxWidth: "100%", height: "100%", justifyContent:"center", margin: "14px auto"}}> 
+            <div style={{width: "700px", maxWidth: "100%", height: "100%", justifyContent:"center", marginRight: "0"}}>
             <Map />
             </div>
             

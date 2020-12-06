@@ -58,9 +58,6 @@ nav h1 {
 }
 
 
-
-
-
 @media (max-width: 600px){
   nav h1{margin: 10px auto; text-align: center};
 }
@@ -71,4 +68,8 @@ nav h1 {
 
 @media (max-width: 600px){
   .navlogo{margin: 10px auto} 
+}
+
+@media (max-width: 600px) {
+  .navTitle{display: none}
 }

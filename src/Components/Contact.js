@@ -1,7 +1,7 @@
 
 import {Component} from "react";
 import Navigation from "./Navigation";
-import illustration from "./Images/contact.svg";
+import illustration from "./Images/contact2.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 
@@ -19,7 +19,7 @@ export class Contactpage extends Component {
                     <div>
                         
                         <p style={{padding:"10px", marginBottom:"20px", marginRight:"30px"}}>
-                        <h3 style={{marginBottom:"4px"}}>Adress:</h3>
+                        <h3 style={{marginBottom:"4px"}}>Address:</h3>
                         Christian Eckardt <br></br>
                         Zesenstraße 9 <br></br>
                         22301 Hamburg <br></br>
