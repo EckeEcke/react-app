@@ -17,6 +17,10 @@ function Detailpage() {
 
         const entry = Entries[id-1];
 
+        const lat = entry.lat;
+
+        const lng = entry.lng;
+
         return(
             <>
             <Navigation />
@@ -50,7 +54,7 @@ function Detailpage() {
             </div>
     
             <div style={{width: "700px", maxWidth: "100%", height: "100%", justifyContent:"center", marginRight: "0"}}>
-            <Map />
+            <Map zoom={8} position={{lat, lng}} lat={lat} lng={lng} />
             </div>
             
             </div>

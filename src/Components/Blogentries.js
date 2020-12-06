@@ -4,12 +4,15 @@ import Entries from "./Data/Entries.data";
 
 const Blogentries = () => {
 
+    let sortedEntries = Entries.sort((a, b) => new Date(b.date).getTime() -  new Date(a.date).getTime());
+
+
 
 
     return(
         <>
             {Entries &&
-                Entries.map((entry, index) => {
+                sortedEntries.map((entry, index) => {
                 return(
                     <Blogentry blog={entry} id={index+1} />
                 

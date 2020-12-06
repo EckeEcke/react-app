@@ -13,7 +13,7 @@ function Navigation(){
             <div className="navBTNs">
                 <Link to="/Contact" style={{margin:"10px", padding: "8px", textDecoration: "none", color: "white", width: "90px"}}>Contact</Link>
                 <Link to="/New"><button style={{margin:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faPlus} /> New Post</button></Link>
-                <button style={{margin:"10px 20px 10px 10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faUser}  /> Login</button>
+                <button style={{margin:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faUser}  /> Login</button>
             </div>
             
 
