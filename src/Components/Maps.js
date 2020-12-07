@@ -1,12 +1,16 @@
 import React, {Component, useState } from "react";
 import {Map, Marker, GoogleApiWrapper, InfoWindow} from 'google-maps-react';
 import { Link, BrowserRouter } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCalendarAlt, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 
 
 
 export class MapContainer extends Component {
+
+  
 
 
     state = {
@@ -76,7 +80,7 @@ export class MapContainer extends Component {
 
                   onClick={this.onMarkerClick}
                   name={entry.title}
-                  id={index}
+                  id={index+1}
                   position={{ lat: entry.lat, lng: entry.lng }}
                   title={entry.title}
                   image={entry.portrait}
@@ -95,20 +99,22 @@ export class MapContainer extends Component {
 
               visible={this.state.showingInfoWindow}>
                 <div>
+                <img src={this.state.activeMarker.image} alt="Chris" style={{width:"80px", height:"80px", display:"block", margin:"10px auto", objectFit:"cover", borderRadius: "50%", verticalAlign:"middle"}}></img>
                   <h2>{this.state.activeMarker.title}</h2>
-                  <img src={this.state.activeMarker.image} alt="Chris" style={{width:"50px", height:"50px", float:"left", margin:"0 10px", objectFit:"cover", borderRadius: "50%", verticalAlign:"middle"}}></img>
-                  <p>
-                    {this.state.activeMarker.author}
+                  
+                  <p style={{fontSize:"1.1em"}}>
+  
+                  <FontAwesomeIcon icon={faUser} style={{marginRight:"5px"}}  />  {this.state.activeMarker.author}
+                   <br></br>
+                   <FontAwesomeIcon icon={faCalendarAlt} style={{marginRight:"5px"}}  /> {this.state.activeMarker.date}
+
                     <br></br>
-                    Travel date:
-                    <br></br>
-                    {this.state.activeMarker.date}
-                    <br></br><br></br>
-                    <BrowserRouter><Link to={`/Details/${this.state.activeMarker.id}`}>Read more</Link></BrowserRouter>
+                    
                     
 
                     </p>
-
+                    
+                    {this.state.activeMarker.id && <BrowserRouter><Link to={`/Details/${this.state.activeMarker.id}`} style={{float:"right"}}><button style={{marginTop:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}>Read more</button></Link></BrowserRouter>}
 
                 </div>
               </InfoWindow>

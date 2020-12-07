@@ -29,6 +29,10 @@ function Detailpage() {
 
         const author = entry.author;
 
+        const city = entry.city;
+
+        const country = entry.country;
+
 
         return(
             <>
@@ -58,7 +62,7 @@ function Detailpage() {
             <img style={{width:"100%", maxWidth:"500px", display:"block", margin:"0 auto"}} src={entry.image}></img>
             <div style={{padding:"10px"}}>
             <p style={{width:"100%", maxWidth:"500px", margin:"0 auto", paddingBottom:"30px"}}>{entry.description}
-            <br></br><br></br><FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>Barcelona, Spain</b></p>
+            <br></br><br></br><FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{city}, {country}</b></p>
 
             
 
