@@ -8,6 +8,7 @@ import Detailpage from "./Components/Detailpage";
 
 
 
+
 function App() {
   return (
     <div className="App">
