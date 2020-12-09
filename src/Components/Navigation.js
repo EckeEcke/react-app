@@ -6,6 +6,11 @@ import { faPlus, faUser } from '@fortawesome/free-solid-svg-icons'
 
 
 function Navigation(){
+
+    function loginAlert(){
+        alert("Login feature is not available yet.");
+    }
+
     return(
         <nav style={{backgroundColor: "#00BCD4", display: "flex", flexDirection: "row", flexWrap:"wrap", alignItems: "center"}}>
             <Link to="/"  className="navlogo"><img style={{width: "70px"}} src={logo} alt="my Logo"></img></Link> 
@@ -13,7 +18,7 @@ function Navigation(){
             <div className="navBTNs">
                 <Link to="/Contact" style={{margin:"10px", padding: "8px", textDecoration: "none", color: "white", width: "90px"}}>Contact</Link>
                 <Link to="/New"><button style={{margin:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faPlus} /> New Post</button></Link>
-                <button style={{margin:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faUser}  /> Login</button>
+                <button onClick={loginAlert} style={{margin:"10px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faUser}  /> Login</button>
             </div>
             
 
