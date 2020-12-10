@@ -28,12 +28,46 @@ body {
   color: #61dafb;
 }
 
-.Blogentry:hover {
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  transform: scale(1.1);
-  transition-duration: 700ms;
+.dashboardMainFlexbox {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: center;
 }
 
+.dashboardSubFlexbox {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  width: 700px; 
+  justify-content: center;
+}
+
+.dashboardMapcontainer {
+  width: 700px; 
+  height: 600px; 
+  justify-content: center; 
+  margin: 14px auto;
+}
+
+.descriptionBox {
+  max-width: 698px; 
+  width: 99.8%; 
+  background-color: #00BCD4; 
+  color: white; 
+  border: 1px solid #00BCD4;
+}
+
+.descriptionIllustration {
+  float: right; 
+  width: 100px; 
+  margin: 10px;
+}
+
+.descriptionText {
+  padding: 5%; 
+  font-size: 1.2em;
+}
 
 
 nav h1 {

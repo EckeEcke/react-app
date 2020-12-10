@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Dashboard from "./Components/Dashboard";
 import NewPost from "./Components/NewPost"
 import Detailpage from "./Components/Detailpage";
+import Navigation from "./Components/Navigation";
 
 
 
@@ -12,6 +13,7 @@ import Detailpage from "./Components/Detailpage";
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Switch>
         <Route path="/" exact component={Dashboard} />
         <Route path="/Contact" component={Contactpage} />

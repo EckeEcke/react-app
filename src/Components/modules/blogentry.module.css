@@ -1,0 +1,34 @@
+.Blogentry:hover {
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    transform: scale(1.1);
+    transition-duration: 700ms;
+  }
+
+.Blogentry {
+    width: 300px; 
+    margin: 2%; 
+    background-color: white;
+    border: 1px solid rgb(211,211,211,0.8);
+}
+
+.previewImage {
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+    margin: 0;
+}
+
+.entryBox {
+    background-color: white; 
+    padding: 1% 1% 0 1%;
+}
+
+.profileImage {
+    height: 30px; 
+    width: 30px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    vertical-align: middle; 
+    float: left; 
+    margin-right: 10px;
+}

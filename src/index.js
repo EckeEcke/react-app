@@ -6,10 +6,11 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import ScrollToTop from "./Components/ScrollToTop";
 
+
 ReactDOM.render(
   <BrowserRouter>
     <ScrollToTop>
-      <App />
+        <App />
     </ScrollToTop>
   </BrowserRouter>
   

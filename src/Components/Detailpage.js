@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "./Navigation";
 import Map from "./Maps";
-import Entries from "./Data/Entries.data";
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import styles from "./modules/detailpage.module.css";
 
 
 
@@ -12,76 +12,92 @@ import { faArrowLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 
 function Detailpage() {
 
+    const {id} = useParams();
+    
+    const [entries, setEntries] = useState([]);
+    const [entry, setEntry] = useState({});
+    const [lat, setLat] = useState(0);
+    const [lng, setLng] = useState(0);
+    const [fetchComplete, setFetchComplete] = useState("no");
+ 
+    if(entries.length<1){
+        fetch("https://blogbackend-by-chris.herokuapp.com/")
+                .then(response => response.json())
+                .then(data => {
+                    setEntries(data);
+                    console.log(data);
+                    setEntry(data[id-1]);
+                    console.log(data[id-1]);
+                    console.log(entry);
+                    
 
-        const {id} = useParams();
-
-        const entry = Entries[id-1];
-
-        const lat = entry.lat;
-
-        const lng = entry.lng;
-
-        const infoTitle = entry.title;
-
-        const image = entry.portrait;
-
-        const date = entry.date;
-
-        const author = entry.author;
-
-        const city = entry.city;
-
-        const country = entry.country;
+                })
+                .then(() => {
+                    setLat(entry.lat);
+                    console.log(entry.lat);
+                    setLng(entry.lng);
+                    console.log(lat);
+                    setFetchComplete("yes");
+                }
+                   
+                )
+        }
 
 
         return(
             <>
-            <Navigation />
-    
             
+    
+            {entry &&
            
-            <div style={{display: "flex", flexDirection: "row", flexWrap:"wrap", justifyContent:"center", backgroundColor:"white", minHeight:"100vh"}}>
+            <div className={styles.detailpageWrapper}>
             
-            <div style={{width:"700px", maxWidth: "100vw", backgroundColor:"white", position: "relative", margin: "0px auto"}}>
+                <div className={styles.detailpageContainer}>
             
-            <div style={{padding:"0 10px", maxWidth:"500px", margin:"0 auto"}}>
+                    <div className={styles.detailpageContentbox}>
+            
             <br></br><br></br>
-            <Link to="/"><button style={{padding: "8px", backgroundColor: "#FF8C00", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faArrowLeft} /> Back</button></Link>
+            
+                        <Link to="/">
+                            <button className={styles.orangeBTN}>
+                                <FontAwesomeIcon icon={faArrowLeft} /> Back
+                            </button>
+                        </Link>
+
             <br></br><br></br>
-            <h2>{entry.title}</h2>
-            <h5>
-            <img style={{float:"left", height: "40px", width:"40px", objectFit:"cover", borderRadius: "50%", verticalAlign:"middle"}} src={entry.portrait}></img>
-    
-            <span style={{margin:"8px 8px"}}>Travel date: {entry.date}</span>
+                        <h2>{entry.title}</h2>
+                        <h5>
+                            <img className={styles.detailpagePortrait} src={entry.portrait}></img>
+                            <span style={{margin:"8px 8px"}}>Travel date: {entry.date}</span>
             <br></br>
-            <span style={{margin:"8px 8px"}}>Author: {entry.author}</span></h5>
+                            <span style={{margin:"8px 8px"}}>Author: {entry.author}</span>
+                        </h5>
 
-            </div>
+                    </div>
             
             
-            <img style={{width:"100%", maxWidth:"500px", display:"block", margin:"0 auto"}} src={entry.image}></img>
+                <img className={styles.detailpageImage} src={entry.image}></img>
             <div style={{padding:"10px"}}>
-            <p style={{width:"100%", maxWidth:"500px", margin:"0 auto", paddingBottom:"30px"}}>{entry.description}
-            <br></br><br></br><FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{city}, {country}</b></p>
 
-            
+                <p className={styles.detailpageText}>{entry.description}
+            <br></br><br></br>
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{entry.city}, {entry.country}</b></p>
 
             </div>
             
             </div>
     
-            <div style={{width: "700px", maxWidth: "100%", height: "100%", justifyContent:"center", marginRight: "0"}}>
-            <Map zoom={8} position={{lat, lng}} lat={lat} lng={lng} title={infoTitle} image={image} date={date} author={author} id={id} />
+            <div className={styles.detailpageMapcontainer}>
+
+                 <Map zoom={8}  position={{lat:0, lng: 0}} lat={0} lng={0}  id={id} />
+
             </div>
             
             </div>
-        
+            }
             </>
+               
         )
-
-   
-  
-
 }
 
 export default Detailpage;

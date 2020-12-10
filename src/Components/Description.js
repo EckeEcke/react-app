@@ -4,14 +4,21 @@ import airport from "./Images/airport2.svg";
 function Description(){
     return(
 
-    <div style={{maxWidth: "698px", width:"99.8%", backgroundColor:"#00BCD4", color:"white", border:"1px solid #00BCD4"}}>
-  <p style={{padding:"5%", fontSize:"1.2em"}}>
-  <h4>About:</h4>
-  <img style={{float:"right", width: "100px", margin:"10px"}} src={airport} alt="person waiting for airplane"></img>
-   Welcome to my Travel Blog Editor! I built this SPA in React as my final project of the Full Stack Web Developer course at Hamburg Coding School. The rest is just some placeholder text
-   until I know which features I managed to implement. Probably quite a few.
+  <div className="descriptionBox">
 
-  </p>
+      <p className="descriptionText" style={{}}>
+
+      <h4>About:</h4>
+
+      <img className="descriptionIllustration" src={airport} alt="person waiting for airplane"></img>
+      
+      Welcome to my Travel Blog Editor! I built this single page application in React as my final project 
+      of the Full Stack Web Developer course at Hamburg Coding School. The blog entries are served by my own
+        backend application on Heroku and get sorted there descending by recent travel date. For each entry there 
+        is a marker on the map with an info window. Clicking on an entrie´s image reveals a detail page with more information.
+
+      </p>
+
   </div> 
     )
 }
