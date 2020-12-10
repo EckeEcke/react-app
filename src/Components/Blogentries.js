@@ -24,7 +24,7 @@ const Blogentries = () => {
             {
                 entries.map((entry, index) => {
                 return(
-                    <Blogentry blog={entry} id={index+1} />
+                    <Blogentry blog={entry} key={index+1} id={index+1} />
                     )
                 })
             }

@@ -6,9 +6,10 @@ function Description(){
 
   <div className="descriptionBox">
 
-      <p className="descriptionText" style={{}}>
+      <p className="descriptionText">
 
-      <h4>About:</h4>
+      <b>About:</b>
+      <br></br><br></br>
 
       <img className="descriptionIllustration" src={airport} alt="person waiting for airplane"></img>
       

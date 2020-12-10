@@ -21,15 +21,18 @@ export class Contactpage extends Component {
                         
                             <p className={styles.contactpageContent}>
                                 
-                            <h3 style={{marginBottom:"4px"}}>Address:</h3>
+                            <span style={{marginBottom:"4px"}}><b>Address:</b></span>
+                            <br></br>
                             Christian Eckardt <br></br>
                             Zesenstraße 9 <br></br>
                             22301 Hamburg <br></br>
                             <br></br>
 
-                            <h3 style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faEnvelope} /> Mail:</h3>
+                            <span style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faEnvelope} /><b> Mail:</b> </span>
+                            <br></br>
                             eckardt.christian@web.de <br></br>
-                            <h3 style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faPhone} /> Phone:</h3>
+                            <span style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faPhone} /><b> Phone:</b></span>
+                            <br></br>
                             0178 5325488
                             
                             </p>

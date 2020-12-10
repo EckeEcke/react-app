@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navigation from "./Navigation";
 import Map from "./Maps";
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,31 +15,20 @@ function Detailpage() {
     
     const [entries, setEntries] = useState([]);
     const [entry, setEntry] = useState({});
-    const [lat, setLat] = useState(0);
-    const [lng, setLng] = useState(0);
-    const [fetchComplete, setFetchComplete] = useState("no");
+
+
  
     if(entries.length<1){
         fetch("https://blogbackend-by-chris.herokuapp.com/")
                 .then(response => response.json())
                 .then(data => {
                     setEntries(data);
-                    console.log(data);
                     setEntry(data[id-1]);
-                    console.log(data[id-1]);
-                    console.log(entry);
+            
                     
 
                 })
-                .then(() => {
-                    setLat(entry.lat);
-                    console.log(entry.lat);
-                    setLng(entry.lng);
-                    console.log(lat);
-                    setFetchComplete("yes");
-                }
-                   
-                )
+           
         }
 
 
@@ -67,7 +55,7 @@ function Detailpage() {
             <br></br><br></br>
                         <h2>{entry.title}</h2>
                         <h5>
-                            <img className={styles.detailpagePortrait} src={entry.portrait}></img>
+                            <img className={styles.detailpagePortrait} alt="portrait of user" src={entry.portrait}></img>
                             <span style={{margin:"8px 8px"}}>Travel date: {entry.date}</span>
             <br></br>
                             <span style={{margin:"8px 8px"}}>Author: {entry.author}</span>
@@ -76,7 +64,7 @@ function Detailpage() {
                     </div>
             
             
-                <img className={styles.detailpageImage} src={entry.image}></img>
+                <img className={styles.detailpageImage} alt="impressions of vacation" src={entry.image}></img>
             <div style={{padding:"10px"}}>
 
                 <p className={styles.detailpageText}>{entry.description}

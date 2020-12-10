@@ -28,8 +28,7 @@ export class MapContainer extends Component {
       fetch("https://blogbackend-by-chris.herokuapp.com/")
         .then(response => response.json())
         .then(data => this.setState({ 
-          entries: data} ))
-        .then(console.log(this.state.entries));
+          entries: data} ));
         
     }
 
@@ -105,6 +104,7 @@ export class MapContainer extends Component {
                   image={entry.portrait}
                   author={entry.author}
                   date={entry.date}
+                  key={index+1}
                   />
 
                  
