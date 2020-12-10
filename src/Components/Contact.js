@@ -2,7 +2,7 @@
 import {Component} from "react";
 import illustration from "./Images/contact2.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faHome } from '@fortawesome/free-solid-svg-icons'
 import styles from "./modules/contact.module.css";
 
 export class Contactpage extends Component {
@@ -20,8 +20,8 @@ export class Contactpage extends Component {
                         <div>
                         
                             <p className={styles.contactpageContent}>
-                                
-                            <span style={{marginBottom:"4px"}}><b>Address:</b></span>
+                            <br></br>    
+                            <span style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faHome} /><b> Address:</b></span>
                             <br></br>
                             Christian Eckardt <br></br>
                             Zesenstraße 9 <br></br>
@@ -31,6 +31,7 @@ export class Contactpage extends Component {
                             <span style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faEnvelope} /><b> Mail:</b> </span>
                             <br></br>
                             eckardt.christian@web.de <br></br>
+                            <br></br>
                             <span style={{marginBottom:"4px"}}><FontAwesomeIcon icon={faPhone} /><b> Phone:</b></span>
                             <br></br>
                             0178 5325488
