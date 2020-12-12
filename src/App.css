@@ -4,10 +4,12 @@
 body {
   background-color: #F1F1F1;
   font-family: "Roboto";
+  
 }
 
 .App {
   //text-align: center;
+  
   
 }
 
@@ -33,6 +35,8 @@ body {
   flex-direction: row; 
   flex-wrap: wrap; 
   justify-content: center;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .dashboardSubFlexbox {
@@ -45,7 +49,7 @@ body {
 
 .dashboardMapcontainer {
   width: 700px; 
-  height: 600px; 
+  height: 1000px; 
   justify-content: center; 
   margin: 14px auto;
 }

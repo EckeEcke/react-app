@@ -77,7 +77,7 @@ export class MapContainer extends Component {
             style={{width:"700px", maxWidth: "100%", height:"100%", maxHeight: "700px"}}
             zoom={this.props.zoom}
             initialCenter={{ lat: this.state.entries[this.props.id-1].lat, lng: this.state.entries[this.props.id-1].lng }}
-            containerStyle={{width: "100%", maxWidth: '700px', maxHeight: "100%" }}>
+            containerStyle={{width: "700px", maxWidth: '100%', maxHeight: "100%" }}>
           
         
             

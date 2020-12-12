@@ -24,7 +24,7 @@ export class Dashboard extends Component {
             
                     <div className="dashboardMapcontainer"> 
                         <Description />
-                        <Map zoom={2.2} id={1} />
+                        <Map zoom={2.2} id={1} />   
                     </div> 
                   </div>
         

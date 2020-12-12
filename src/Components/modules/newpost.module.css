@@ -5,7 +5,8 @@
     flex-wrap: wrap; 
     align-items: center;
     justify-content: center; 
-    background-color: #00BCD4; 
+    background-color: #00BCD4;
+    min-height: 100vh; 
     height: 200%;
 }
 
