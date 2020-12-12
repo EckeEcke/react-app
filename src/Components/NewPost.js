@@ -18,8 +18,7 @@ function NewPost() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ data })
         })
-        .then(fetch("https://blogbackend-by-chris.herokuapp.com/"))
-        .then(history.push("/"));
+        .then(setTimeout(function(){history.push("/")},2000))
     };    
  
     
