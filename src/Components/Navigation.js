@@ -12,13 +12,17 @@ function Navigation(){
     }
 
     return(
-        <nav style={{backgroundColor: "#00BCD4", display: "flex", flexDirection: "row", flexWrap:"wrap", alignItems: "center"}}>
+        <nav className="navbar">
             <Link to="/"  className="navlogo"><img style={{width: "70px"}} src={logo} alt="my Logo"></img></Link> 
             <h1 className="navTitle">Travel Blog Editor by Chris</h1>
             <div className="navBTNs">
-                <Link to="/Contact" ><button style={{margin:"8px", padding: "8px", textDecoration: "none", color: "white", width: "90px", borderStyle: "none", background:"none"}}>Contact</button></Link>
-                <Link to="/New"><button style={{margin:"8px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faPlus} /> New Post</button></Link>
-                <button onClick={loginAlert} style={{margin:"8px", padding: "8px", backgroundColor: "#32CD32", borderStyle: "none", borderRadius:"20px", width:"90px", color: "white"}}><FontAwesomeIcon icon={faUser}  /> Login</button>
+                <Link to="/Contact" >
+                    <button className="contactBTN">Contact</button>
+                </Link>
+                <Link to="/New">
+                    <button className="navBTN"><FontAwesomeIcon icon={faPlus} /> New Post</button>
+                </Link>
+                <button onClick={loginAlert} className="navBTN"><FontAwesomeIcon icon={faUser}  /> Login</button>
             </div>
             
 

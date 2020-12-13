@@ -15,6 +15,9 @@ const Blogentries = () => {
         .then(data => {
             setEntries(data);
         })
+        .catch(function(error) {
+            console.log(error);
+        });
     }
   
 

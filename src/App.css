@@ -73,6 +73,23 @@ body {
   font-size: 1.2em;
 }
 
+.navbar {
+  background-color: #00BCD4; 
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  align-items: center;
+}
+
+.contactBTN {
+  margin: 8px; 
+  padding: 8px; 
+  text-decoration: none; 
+  color: white; 
+  width: 90px; 
+  border-style: none; 
+  background: none;
+}
 
 nav h1 {
   text-align: left;
@@ -81,6 +98,16 @@ nav h1 {
   color: white;
 }
 
+
+.navBTN {
+  margin: 8px; 
+  padding: 8px; 
+  background-color: #32CD32; 
+  border-style: none; 
+  border-radius: 20px; 
+  width: 90px; 
+  color: white;
+}
 
 .navBTNs {
   margin: 0 0 0 auto; 

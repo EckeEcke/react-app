@@ -24,11 +24,10 @@ function Detailpage() {
                 .then(data => {
                     setEntries(data);
                     setEntry(data[id-1]);
-            
-                    
-
                 })
-           
+                .catch(function(error) {
+                    console.log(error);
+                });
         }
 
 
@@ -55,7 +54,7 @@ function Detailpage() {
             <br></br><br></br>
                         <h2>{entry.title}</h2>
                         <h5>
-                            <img className={styles.detailpagePortrait} alt="portrait of user" src={entry.portrait}></img>
+                            <img className={styles.detailpagePortrait} alt="portrait of user" src={entry.portrait} onError={(e)=>{e.target.onerror = null; e.target.src="https://180dc.org/wp-content/uploads/2017/11/profile-placeholder.png"}}></img>
                             <span style={{margin:"8px 8px"}}>Travel date: {entry.date}</span>
             <br></br>
                             <span style={{margin:"8px 8px"}}>Author: {entry.author}</span>
@@ -64,7 +63,7 @@ function Detailpage() {
                     </div>
             
             
-                <img className={styles.detailpageImage} alt="impressions of vacation" src={entry.image}></img>
+                <img className={styles.detailpageImage} alt="impressions of vacation" src={entry.image} onError={(e)=>{e.target.onerror = null; e.target.src="https://jugendbildungsmesse.de/wp-content/uploads/2017/07/jugendbildungsmesse-work-and-travel-reisen.jpg"}}></img>
             <div style={{padding:"10px"}}>
 
                 <p className={styles.detailpageText}>{entry.description}

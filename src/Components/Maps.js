@@ -28,7 +28,10 @@ export class MapContainer extends Component {
       fetch("https://blogbackend-by-chris.herokuapp.com/")
         .then(response => response.json())
         .then(data => this.setState({ 
-          entries: data} ));
+          entries: data} ))
+        .catch(function(error) {
+          console.log(error);
+        });
         
     }
 
@@ -84,10 +87,10 @@ export class MapContainer extends Component {
 
             {this.state.entries.length>0 &&
             <Marker onClick={this.onMarkerClick}
-            title={this.state.entries[this.props.id-1].title} 
-            image={this.state.entries[this.props.id-1].portrait}
-            author={this.state.entries[this.props.id-1].author}
-            date={this.state.entries[this.props.id-1].date}
+              title={this.state.entries[this.props.id-1].title} 
+              image={this.state.entries[this.props.id-1].portrait}
+              author={this.state.entries[this.props.id-1].author}
+              date={this.state.entries[this.props.id-1].date}
             />
             }
 
@@ -96,15 +99,15 @@ export class MapContainer extends Component {
               this.state.entries.map((entry, index) => 
                   
                   <Marker
-                  onClick={this.onMarkerClick}
-                  name={entry.title}
-                  id={index+1}
-                  position={{ lat: entry.lat, lng: entry.lng }}
-                  title={entry.title}
-                  image={entry.portrait}
-                  author={entry.author}
-                  date={entry.date}
-                  key={index+1}
+                    onClick={this.onMarkerClick}
+                    name={entry.title}
+                    id={index+1}
+                    position={{ lat: entry.lat, lng: entry.lng }}
+                    title={entry.title}
+                    image={entry.portrait}
+                    author={entry.author}
+                    date={entry.date}
+                    key={index+1}
                   />
 
                  
@@ -118,22 +121,23 @@ export class MapContainer extends Component {
 
               visible={this.state.showingInfoWindow}>
                 <div>
-                <img src={this.state.activeMarker.image} alt="Chris" className={styles.infoPortrait}></img>
+                <img src={this.state.activeMarker.image} 
+                     onError={(e)=>{e.target.onerror = null; e.target.src="https://jugendbildungsmesse.de/wp-content/uploads/2017/07/jugendbildungsmesse-work-and-travel-reisen.jpg"}}
+                     alt="author" className={styles.infoPortrait}>
+                </img>
                   <h2>{this.state.activeMarker.title}</h2>
                   
                   <p style={{fontSize:"1.1em"}}>
   
-                  <FontAwesomeIcon icon={faUser} style={{marginRight:"5px"}}  />  {this.state.activeMarker.author}
+                    <FontAwesomeIcon icon={faUser} style={{marginRight:"5px"}}  />  {this.state.activeMarker.author}
                    
-                  <br></br>
+                    <br></br>
                   
-                  <FontAwesomeIcon icon={faCalendarAlt} style={{marginRight:"5px"}}  /> {this.state.activeMarker.date}
+                    <FontAwesomeIcon icon={faCalendarAlt} style={{marginRight:"5px"}}  /> {this.state.activeMarker.date}
 
-                  <br></br>
+                    <br></br>
                     
-                    
-
-                    </p>
+                  </p>
                     
                     {this.state.activeMarker.id && 
                     <BrowserRouter>
