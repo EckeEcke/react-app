@@ -19,7 +19,7 @@ export class MapContainer extends Component {
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
-      entries: []
+      entries: [],
     };
    
 
@@ -71,6 +71,7 @@ export class MapContainer extends Component {
 
         
       <>
+
         {this.state.entries.length>0 &&
         <Map 
 
