@@ -1,37 +1,62 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 import Map from "./Maps";
 import Description from "./Description";
 import Blogentries from "./Blogentries";
+import Loading from "./Loading";
 
 
 
 
 
-export class Dashboard extends Component {
+function Dashboard() {
 
+    const [isLoading, setLoading] = useState(true);
+    const [entries, setEntries] = useState([]);
 
-    render() {
+    if(entries.length<1){
+        fetch("https://blogbackend-by-chris.herokuapp.com/")
+        .then(response => response.json())
+        .then(data => {
+            setEntries(data);
+            setLoading(false);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+    }
+
+         
         return(
+            
             <>
-            
-                  <br></br>
-                  <br></br>
+            {isLoading && 
+                <Loading />
+            }
 
-                  <div className="dashboardMainFlexbox">
-                    <div className="dashboardSubFlexbox">
-                        <Blogentries />
-                    </div>
-            
-                    <div className="dashboardMapcontainer"> 
-                        <Description />
-                        <Map zoom={2.4} id={1} />   
-                    </div> 
+            {!isLoading &&
+            <>
+                <br></br>
+                <br></br>
+
+                <div className="dashboardMainFlexbox">
+                  <div className="dashboardSubFlexbox">
+                      <Blogentries entries={entries} />
                   </div>
+          
+                  <div className="dashboardMapcontainer"> 
+                      <Description entries={entries} />
+                      <Map entries={entries} zoom={2.4} id={1} />   
+                  </div> 
+                </div>
+                </>
+            }
+            
+                  
         
             </>
         )
 
-    }
+    
   
 
 }

@@ -23,7 +23,6 @@ export class MapContainer extends Component {
     };
    
 
-
     componentDidMount() {
       fetch("https://blogbackend-by-chris.herokuapp.com/")
         .then(response => response.json())

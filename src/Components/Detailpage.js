@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import styles from "./modules/detailpage.module.css";
+import Loading from "./Loading";
 
 
 
@@ -15,6 +16,7 @@ function Detailpage() {
     
     const [entries, setEntries] = useState([]);
     const [entry, setEntry] = useState({});
+    const [isLoading, setLoading] = useState(true);
 
 
  
@@ -24,6 +26,7 @@ function Detailpage() {
                 .then(data => {
                     setEntries(data);
                     setEntry(data[id-1]);
+                    setLoading(false);
                 })
                 .catch(function(error) {
                     console.log(error);
@@ -33,9 +36,12 @@ function Detailpage() {
 
         return(
             <>
-            
+            {isLoading && 
+                <Loading />
+            }
     
-            {entry &&
+
+            {entry && !isLoading &&
            
             <div className={styles.detailpageWrapper}>
             
