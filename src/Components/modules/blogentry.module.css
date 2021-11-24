@@ -1,7 +1,6 @@
 .Blogentry:hover {
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     transform: scale(1.1);
-    transition-duration: 700ms;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
 .Blogentry {
@@ -9,8 +8,8 @@
     margin: 2%; 
     background-color: white;
     border: 1px solid rgb(211,211,211,0.8);
-    animation: appearing-divs 1s ease-out;
-    animation-fill-mode: forwards;
+    transition: transform 0.5s linear;
+    animation: appearing-divs 0.5s ease-in;
 }
 
 .previewImage {
@@ -22,7 +21,7 @@
 
 .entryBox {
     background-color: white; 
-    padding: 1% 1% 0 1%;
+    padding: 1% 8px 0 8px;
 }
 
 .profileImage {
@@ -36,6 +35,12 @@
 }
 
 @keyframes appearing-divs {
-    0% {opacity: 0; transform: translateX(-100px)};
+    0% {opacity: 0; transform: translateX(-30px)};
     100% {opacity: 1; transform: translateX(0px)}
 }
+
+@media (max-width: 395px) {
+    .Blogentry {
+      width: 100%;
+    }
+  }

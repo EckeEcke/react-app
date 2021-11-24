@@ -7,15 +7,8 @@ import { useState} from "react";
 
 
 const Blogentries = (props) => {
-
-    
-  
-
-    
     return(
         <>
-            
-
             {
                 props.entries.map((entry, index) => {
                 return(
@@ -23,10 +16,7 @@ const Blogentries = (props) => {
                     )
                 })
             }
-
         </>
-
-
     )
 }
 

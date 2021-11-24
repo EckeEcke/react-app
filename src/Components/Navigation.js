@@ -13,7 +13,7 @@ function Navigation(){
 
     return(
         <nav className="navbar">
-            <Link to="/"  className="navlogo"><img style={{width: "70px"}} src={logo} alt="my Logo"></img></Link> 
+            <Link to="/"  className="navlogo"><img src={logo} alt="my Logo"></img></Link> 
             <h1 className="navTitle">Travel Blog Editor by Chris</h1>
             <div className="navBTNs">
                 <Link to="/Contact" >
