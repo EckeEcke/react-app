@@ -14,7 +14,7 @@ function Navigation(){
     return(
         <nav className="navbar">
             <Link to="/"  className="navlogo"><img src={logo} alt="my Logo"></img></Link> 
-            <h1 className="navTitle">Travel Blog Editor by Chris</h1>
+            <h1 className="navTitle">React Travel Blog Editor</h1>
             <div className="navBTNs">
                 <Link to="/Contact" >
                     <button className="contactBTN">Contact</button>
