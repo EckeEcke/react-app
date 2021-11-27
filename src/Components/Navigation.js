@@ -13,8 +13,11 @@ function Navigation(){
 
     return(
         <nav className="navbar">
-            <Link to="/"  className="navlogo"><img src={logo} alt="my Logo"></img></Link> 
-            <h1 className="navTitle">React Travel Blog Editor</h1>
+            <div class="items-left">
+                <Link to="/"  className="navlogo"><img src={logo} alt="my Logo"></img></Link> 
+                <h1 className="navTitle">React Travel Blog Editor</h1>
+            </div>
+            
             <div className="navBTNs">
                 <Link to="/Contact" >
                     <button className="contactBTN">Contact</button>
@@ -24,8 +27,6 @@ function Navigation(){
                 </Link>
                 <button onClick={loginAlert} className="navBTN"><FontAwesomeIcon icon={faUser}  /> Login</button>
             </div>
-            
-
         </nav>
     )
 }

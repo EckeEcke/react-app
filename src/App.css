@@ -4,7 +4,6 @@
 body {
   background-color: #F1F1F1;
   font-family: "Roboto";
-  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -86,7 +85,14 @@ body {
   flex-direction: row; 
   flex-wrap: wrap; 
   align-items: center;
+  justify-content:space-between;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 0 12px;
+}
+
+.items-left {
+  display: flex;
+  align-items: center;
 }
 
 button {
@@ -116,8 +122,8 @@ button:active {
 
 nav h1 {
   text-align: left;
-  margin: 1% 20px;
-  width: 460px;
+  margin: 4px 20px;
+  width: auto;
   color: white;
 }
 
@@ -134,7 +140,6 @@ nav h1 {
 
 .navBTNs {
   margin: 0 0 0 auto; 
-  float: right;
 }
 
 
@@ -165,6 +170,14 @@ nav h1 {
   .navBTNs{margin: 10px auto};
   .navlogo{margin: 0px auto; height: 70px; width: 70px}
   .navTitle{display: none} 
+}
+
+@media (max-width: 390px) {
+  .navTitle {
+    display: block;
+    width: auto;
+    margin-left: 12px;
+  }
 }
 
 @media (max-width: 575px) {
