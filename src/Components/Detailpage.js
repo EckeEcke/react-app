@@ -75,7 +75,7 @@ function Detailpage() {
 
                 <p className={styles.detailpageText}>{entry.description}
             <br></br><br></br>
-                <FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{entry.city}, { countries.[entry.country]}</b></p>
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{entry.city}, { countries[entry.country]}</b></p>
 
             </div>
             
