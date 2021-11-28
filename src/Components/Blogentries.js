@@ -1,9 +1,5 @@
 import React from "react";
 import Blogentry from "./Blogentry";
-import { useState} from "react";
-
-
-
 
 
 const Blogentries = (props) => {

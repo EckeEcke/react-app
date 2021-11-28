@@ -13,7 +13,7 @@ function Navigation(){
 
     return(
         <nav className="navbar">
-            <div class="items-left">
+            <div className="items-left">
                 <Link to="/"  className="navlogo"><img src={logo} alt="my Logo"></img></Link> 
                 <h1 className="navTitle">React Travel Blog Editor</h1>
             </div>

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
 import styles from "./modules/detailpage.module.css";
 import Loading from "./Loading";
+import countries from "./Data/countries.json";
 
 
 
@@ -74,7 +75,7 @@ function Detailpage() {
 
                 <p className={styles.detailpageText}>{entry.description}
             <br></br><br></br>
-                <FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{entry.city}, {entry.country}</b></p>
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{color:"red"}}  /> <b>{entry.city}, { countries.[entry.country]}</b></p>
 
             </div>
             

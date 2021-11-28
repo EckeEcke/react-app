@@ -1,30 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Travelers from "./Images/travelers.svg";
 import { Link, useHistory } from 'react-router-dom';
 import styles from "./modules/newpost.module.css";
+import countries from "./Data/countries.json";
 
 
 function NewPost() {
+    
+    const [selectedCountry, setSelectedCountry] = useState('')
 
     let history = useHistory();
 
+    const selectCountry = (event) => {
+        setSelectedCountry(event.target.value)
+    }
+
     const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
-        fetch('https://blogbackend-by-chris.herokuapp.com/new', {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ data })
-        })
-        .then(setTimeout(function(){history.push("/")},2000))
-        .catch(function(error) {
-            console.log(error);
-        });
-    };    
- 
-    
+    const onSubmit = async (data) => {
+        let formData = data
+        try {
+            const geoData = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${data.city},${data.country}&appid=12db1a8a1d383d8d3c7fe1910c723599`)
+                                .then(response => response.json())
+
+            formData.lat = geoData[0].lat
+            formData.lng = geoData[0].lon
+            post(formData)
+        } catch (error) {
+            alert("Location not found. Please try again.")
+        }
+    }    
+
+    const post = data => {
+                    console.log(data);
+                    fetch('https://blogbackend-by-chris.herokuapp.com/new', {
+                        method: "POST",
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ data })
+                    })
+                    .then(setTimeout(function(){history.push("/")},2000))
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+                }
+
+
 
 
         return(
@@ -48,8 +69,14 @@ function NewPost() {
                 <br></br>
                 <label>Country</label>
                 <br></br>
-                <input ref={register} name="country" className={styles.formInput} type="text" placeholder="Enter country" required></input>
-                
+                <select ref={register} name="country" className={styles.formInput} type="text" placeholder="Enter country" value={selectedCountry} onChange={(event) => selectCountry(event)} required>
+                    {Object.keys(countries).map((country, index) => (
+                        <option key={countries[country]} value={country}>
+                            {countries[country]}
+                        </option>
+                    ))}
+                </select>
+                  
                 <br></br>
                 <label>City</label>
                 <br></br>
@@ -69,16 +96,6 @@ function NewPost() {
                 <label>Portrait Link</label>
                 <br></br>
                 <input ref={register} name="portrait" type="url" placeholder="Enter link to portrait (optional)" className={styles.formInput}></input>
-                
-                <br></br>
-                <label>Longitude</label>
-                <br></br>
-                <input ref={register} name="lng" type="number" placeholder="Enter longitude" className={styles.formInput} max="180" min="-180" required></input>
-                
-                <br></br>
-                <label>Latitude</label>
-                <br></br>
-                <input ref={register} name="lat" type="number" placeholder="Enter latitude" className={styles.formInput} max="90" min="-90" required></input>
                 
                 <br></br>
                 <label>Description</label>
