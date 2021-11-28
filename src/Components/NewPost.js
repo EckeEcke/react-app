@@ -4,11 +4,13 @@ import Travelers from "./Images/travelers.svg";
 import { Link, useHistory } from 'react-router-dom';
 import styles from "./modules/newpost.module.css";
 import countries from "./Data/countries.json";
+import Loading from "./Loading";
 
 
 function NewPost() {
     
     const [selectedCountry, setSelectedCountry] = useState('')
+    const [isLoading, setLoading] = useState(false)
 
     let history = useHistory();
 
@@ -19,15 +21,16 @@ function NewPost() {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = async (data) => {
+        setLoading(true)
         let formData = data
         try {
             const geoData = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${data.city},${data.country}&appid=12db1a8a1d383d8d3c7fe1910c723599`)
                                 .then(response => response.json())
-
             formData.lat = geoData[0].lat
             formData.lng = geoData[0].lon
             post(formData)
         } catch (error) {
+            setLoading(false)
             alert("Location not found. Please try again.")
         }
     }    
@@ -39,8 +42,11 @@ function NewPost() {
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ data })
                     })
-                    .then(setTimeout(function(){history.push("/")},2000))
+                    .then(setTimeout(function(){
+                        setLoading(false)
+                        history.push("/")},2000))
                     .catch(function(error) {
+                        setLoading(false)
                         console.log(error);
                     });
                 }
@@ -50,7 +56,12 @@ function NewPost() {
 
         return(
             <>
-            
+            {isLoading && 
+                <Loading />
+            }
+
+            {!isLoading &&
+            <>
             <div className={styles.wrapper}>
             
 
@@ -103,7 +114,7 @@ function NewPost() {
                 <textarea ref={register} name="description" cols="30" rows="8" placeholder="Here you can describe your trip" className={styles.formInput} required></textarea>
                 
                 <br></br>
-                <input type="submit" value="Save" className={styles.greenBTN}></input>
+                <button type="submit" value="Save" className={styles.greenBTN}>Save</button>
                 <Link to="/"><button className={styles.orangeBTN}>Cancel</button></Link>
 
 
@@ -114,10 +125,11 @@ function NewPost() {
             <img src={Travelers} alt="traveling people" style={{height:"400px"}}></img>
 
             </div>
-            
             </>
-        )
+        }
+        </>
+    )
         
-    }
+}
 
 export default NewPost;

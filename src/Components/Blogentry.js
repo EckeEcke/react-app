@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from "./modules/blogentry.module.css";
 
 
+
 const BlogEntry = ({blog, id, delayed1, delayed2}) => {
     return(
         <div className={styles.Blogentry}>
