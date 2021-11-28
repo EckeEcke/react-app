@@ -21,7 +21,7 @@ function NewPost() {
     const onSubmit = async (data) => {
         let formData = data
         try {
-            const geoData = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${data.city},${data.country}&appid=12db1a8a1d383d8d3c7fe1910c723599`)
+            const geoData = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${data.city},${data.country}&appid=12db1a8a1d383d8d3c7fe1910c723599`)
                                 .then(response => response.json())
 
             formData.lat = geoData[0].lat
