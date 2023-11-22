@@ -13,7 +13,7 @@ function Dashboard() {
     const [entries, setEntries] = useState([]);
 
     if(entries.length<1){
-        fetch("https://blogbackend-by-chris.herokuapp.com/")
+        fetch("https://travel-blog-backend-9hik.onrender.com")
         .then(response => response.json())
         .then(data => {
             setEntries(data);

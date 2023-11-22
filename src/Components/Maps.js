@@ -24,7 +24,7 @@ export class MapContainer extends Component {
    
 
     componentDidMount() {
-      fetch("https://blogbackend-by-chris.herokuapp.com/")
+      fetch("https://travel-blog-backend-9hik.onrender.com")
         .then(response => response.json())
         .then(data => this.setState({ 
           entries: data} ))

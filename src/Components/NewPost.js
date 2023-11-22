@@ -37,7 +37,7 @@ function NewPost() {
 
     const post = data => {
                     console.log(data);
-                    fetch('https://blogbackend-by-chris.herokuapp.com/new', {
+                    fetch('https://travel-blog-backend-9hik.onrender.com', {
                         method: "POST",
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ data })
